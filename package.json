@@ -1,0 +1,31 @@
+{
+  "name": "listify",
+  "version": "1.0.0",
+  "description": "This is an individual project which is based on grocery deals Web Application.",
+  "main": "index.js",
+  "scripts": {
+    "lint:html": "html-validate index.html",
+    "lint:css": "stylelint \"css/**/*.css\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run lint:html && npm run lint:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarveshvj/Listify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sarveshvj/Listify/issues"
+  },
+  "homepage": "https://github.com/Sarveshvj/Listify#readme",
+  "devDependencies": {
+    "html-validate": "^11.16.2",
+    "prettier": "^3.9.9",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
