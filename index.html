@@ -4,12 +4,45 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Listify</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
+    <header class="app-header">
       <h1>Listify</h1>
     </header>
-    <main></main>
+
+    <main class="app">
+      <form class="item-form">
+        <label for="item-input">Add groceries</label>
+        <textarea
+          id="item-input"
+          class="item-input"
+          rows="3"
+          placeholder="e.g. apples, bananas, milk"
+        ></textarea>
+        <button type="submit" class="item-button">Add</button>
+      </form>
+
+      <ul class="item-list">
+        <li class="item-entry">
+          <input type="checkbox" id="item-1" class="item-checkbox" />
+          <label for="item-1" class="item-name">Apple</label>
+        </li>
+        <li class="item-entry">
+          <input type="checkbox" id="item-2" class="item-checkbox" checked />
+          <label for="item-2" class="item-name">Banana</label>
+        </li>
+        <li class="item-entry">
+          <input type="checkbox" id="item-3" class="item-checkbox" />
+          <label for="item-3" class="item-name">Orange</label>
+        </li>
+        <li class="item-entry">
+          <input type="checkbox" id="item-4" class="item-checkbox" />
+          <label for="item-4" class="item-name">Cucumber</label>
+        </li>
+      </ul>
+
+      <p class="item-summary">1 of 4 items checked</p>
+    </main>
   </body>
 </html>
