@@ -1,11 +1,126 @@
 :root {
   --color-bg: #f7f7f5;
   --color-text: #1c1c1c;
+  --color-border: #1c1c1c;
+  --color-accent: #f08080;
+  --color-accent-hover: #e86b6b;
+  --color-muted: #6b6b6b;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --radius: 12px;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: system-ui, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.app-header {
+  /* padding: var(--space-md); */
+  text-align: center;
+  margin: 0;
+  padding-top: 40px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 6rem;
+  color: #d75b5bce;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-md);
+}
+
+.item-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.item-input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-sm) var(--space-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  font: inherit;
+}
+
+.item-button {
+  min-height: 44px;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(17 15 15);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0 var(--space-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.item-button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.item-input:focus-visible,
+.item-button:focus-visible {
+  outline-offset: 0.5px;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin: var(--space-md) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item-entry {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 44px;
+}
+
+.item-checkbox {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.item-name {
+  flex: 1;
+}
+
+.item-checkbox:checked + .item-name {
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+
+.item-summary {
+  color: var(--color-muted);
+}
+
+@media (width >= 600px) {
+  .app {
+    padding: 32px var(--space-md);
+  }
 }
