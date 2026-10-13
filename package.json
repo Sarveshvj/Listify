@@ -1,14 +1,19 @@
 {
   "name": "listify",
   "version": "1.0.0",
+  "type": "module",
   "description": "This is an individual project which is based on grocery deals Web Application.",
   "main": "index.js",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint:js": "eslint .",
     "lint:html": "html-validate index.html",
-    "lint:css": "stylelint \"css/**/*.css\"",
+    "lint:css": "stylelint \"src/**/*.css\"",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run format:check && npm run lint:html && npm run lint:css"
+    "check": "npm run format:check && npm run lint:html && npm run lint:css && npm run lint:js"
   },
   "repository": {
     "type": "git",
@@ -17,15 +22,26 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Sarveshvj/Listify/issues"
   },
   "homepage": "https://github.com/Sarveshvj/Listify#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^10.12.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
     "html-validate": "^11.16.2",
     "prettier": "^3.9.9",
     "stylelint": "^17.16.0",
-    "stylelint-config-standard": "^40.0.0"
+    "stylelint-config-standard": "^40.0.0",
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   }
 }
