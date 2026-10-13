@@ -26,6 +26,8 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: "Times New Roman", Times, serif;
+  min-height: 50vh;
+  box-sizing: border-box;
 }
 
 .app-header {
