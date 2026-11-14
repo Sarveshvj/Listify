@@ -1,15 +1,17 @@
 import { useState } from "react";
+import { parseList } from "../utils/parseList.js";
 
 // The text being typed is local state: nothing else needs it until the user
-// clicks Add, and then the form hands the name up to App through `onAdd`.
+// clicks Add. Then the parser splits it into names and the form hands them
+// up to App through `onAdd`.
 function AddItemForm({ onAdd }) {
   const [text, setText] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault(); // stop the browser from reloading the page
-    const name = text.trim();
-    if (!name) return; // ignore empty or whitespace-only input
-    onAdd(name);
+    const names = parseList(text);
+    if (names.length === 0) return; // nothing but blanks, bullets or commas
+    onAdd(names);
     setText("");
   }
 
@@ -20,7 +22,7 @@ function AddItemForm({ onAdd }) {
         id="item-input"
         className="item-input"
         rows="3"
-        placeholder="e.g. apples"
+        placeholder="e.g. apples, bananas, milk — or paste a whole list"
         value={text}
         onChange={(event) => setText(event.target.value)}
       />

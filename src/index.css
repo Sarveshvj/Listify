@@ -121,6 +121,56 @@ body {
   color: var(--color-muted);
 }
 
+.item-delete {
+  min-width: 44px;
+  min-height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--color-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.item-delete:hover {
+  color: var(--color-text);
+  background-color: rgb(0 0 0 / 6%);
+}
+
+.list-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.list-footer .item-summary {
+  margin: 0;
+}
+
+.start-over-button {
+  min-height: 44px;
+  padding: 0 var(--space-md);
+  border: 2px solid var(--color-border);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.start-over-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.start-over-button:hover:not(:disabled) {
+  background-color: var(--color-accent);
+}
+
 @media (width >= 600px) {
   .app {
     padding: 32px var(--space-md);
